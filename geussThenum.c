@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include <string.h>
 
+int startGame();
+
 struct tempPlayer{
     char name[50];
     int tries;
@@ -18,6 +20,7 @@ struct topPlay{
     int sec;
     int time;
 };
+int getTopPlayers(struct topPlay * topPlayer,int i);
 struct topPlay1{
     char name[50];
     int tries;
@@ -33,8 +36,9 @@ struct currPlayer{
     int time;
 };
 
-void main(){
-    clock_t tstart;
+int main(){
+    time_t start_time, end_time;
+    int elapsed_seconds;
     struct currPlayer curr;
     struct topPlay topPlayer[5];
     struct topPlay1 topPlayer1[5];
@@ -47,7 +51,6 @@ void main(){
     printf("\t\t  WELCOME TO GUESS THE NUMBER GAME\n");
     printf("\t\t ==================================\n");
     printf("\t\t\t [ TOP 5 PLAYERS ]\n\n");
-    //printf("\t\tPlace\tName\tTry\tTime\n");
     printf("    %-10s %6s %6s\n","Name","Try","Time");
     for(i=0;i<players;i++){
         printf("    %-1d. %-10s %-3d %3dmin:%02dsec\n",i+1,topPlayer[i].name,topPlayer[i].tries,topPlayer[i].min,topPlayer[i].sec);
@@ -57,19 +60,18 @@ void main(){
     scanf("%s",curr.name);
     printf("\nHello %s guess the number from 1 - 1000.\n",curr.name);
     printf("    Press ( Enter ) to start the game...");
-    ch = getch();
+    ch = getchar();
 
-    tstart = clock();
+    start_time = time(NULL);
     curr.tries = startGame();
-    tstart = clock() - tstart;
-    curr.time = ((int)tstart)/CLOCKS_PER_SEC;
-    curr.sec = curr.time%60;
-    curr.min = curr.time/60;
+    end_time = time(NULL);
+
+    curr.time = (int)(end_time - start_time);
+    curr.min = curr.time / 60;
+    curr.sec = curr.time % 60;
 
     printf("\n\t\t  Try\tTime\n");
     printf("\t\t  %d\t%dmin %dsec\n",curr.tries ,curr.min,curr.sec);
-
-
 
     if(players<5){
         strcpy(topPlayer[players].name,curr.name);
@@ -146,6 +148,7 @@ void main(){
         }
     }
     fclose(fp);
+    return 0;
 }
 int getTopPlayers(struct topPlay * topPlayer,int i){
     FILE * fp = fopen("game.txt","r");
@@ -181,11 +184,11 @@ int startGame(){
             printf("\nHigher...");
             playtry++;
 		}
-        else{
-            return playtry;
-        }
     }
+    return playtry;
 }
-void savePlayer(){
 
+//TODO
+int savePlayer(){
+    return 0;
 }
