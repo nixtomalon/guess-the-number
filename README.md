@@ -12,7 +12,8 @@ This game allows users to guess a randomly generated number within a specified r
 
 # Usage
 To play the "Guess The Number" game:
-1.Clone this repository or download the source code.
+
+1. Clone this repository or download the source code.
 2. Open Terminal, navigate to the directory containing your file, and run:
 ```
 gcc -o guess_the_number_output guess_the_number.c
