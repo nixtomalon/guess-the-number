@@ -26,3 +26,6 @@ gcc -o guess_the_number_output guess_the_number.c
 - Launch the game and enter your guess using the input method provided.
 - Submit your guess to see if it matches the generated number.
 - Receive hints and feedback after each guess to guide you closer to the correct number.
+
+## screenshot
+<img src="https://github.com/nixtomalon/guess-the-number/blob/main/screenshot/sample.png"/>
