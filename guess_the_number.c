@@ -3,16 +3,6 @@
 #include <time.h>
 #include <unistd.h>
 #include <string.h>
-
-int startGame();
-
-struct tempPlayer{
-    char name[50];
-    int tries;
-    int min;
-    int sec;
-    int time;
-};
 struct topPlay{
     char name[50];
     int tries;
@@ -20,7 +10,6 @@ struct topPlay{
     int sec;
     int time;
 };
-int getTopPlayers(struct topPlay * topPlayer,int i);
 struct topPlay1{
     char name[50];
     int tries;
@@ -36,7 +25,10 @@ struct currPlayer{
     int time;
 };
 
-int main(){
+int startGame();
+int getTopPlayers(struct topPlay * topPlayer, int i);
+
+void main(){
     time_t start_time, end_time;
     int elapsed_seconds;
     struct currPlayer curr;
@@ -148,7 +140,6 @@ int main(){
         }
     }
     fclose(fp);
-    return 0;
 }
 int getTopPlayers(struct topPlay * topPlayer,int i){
     FILE * fp = fopen("game.txt","r");
