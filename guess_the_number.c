@@ -3,6 +3,9 @@
 #include <time.h>
 #include <unistd.h>
 #include <string.h>
+
+int startGame();
+
 struct topPlay{
     char name[50];
     int tries;
@@ -25,10 +28,9 @@ struct currPlayer{
     int time;
 };
 
-int startGame();
 int getTopPlayers(struct topPlay * topPlayer, int i);
 
-void main(){
+int main(){
     time_t start_time, end_time;
     int elapsed_seconds;
     struct currPlayer curr;
