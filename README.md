@@ -27,5 +27,5 @@ gcc -o guess_the_number_output guess_the_number.c
 - Submit your guess to see if it matches the generated number.
 - Receive hints and feedback after each guess to guide you closer to the correct number.
 
-## screenshot
+## Example Demo
 <img src="https://github.com/nixtomalon/guess-the-number/blob/master/screenshot/sample.gif"/>
