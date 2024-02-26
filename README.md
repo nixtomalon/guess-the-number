@@ -1,5 +1,5 @@
-# 🎲 Guess The Number Game 🎰
-Welcome to the "Guess The Number" game, a simple number guessing game implemented in C programming language
+# 🎲 guess the number 🎰
+Welcome to the ``guess the number game``, a simple number guessing game implemented in C programming language
 
 # About
 This game allows users to guess a randomly generated number within a specified range. Players can input their guesses and receive hints to guide them toward the correct answer.
