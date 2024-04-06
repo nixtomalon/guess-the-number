@@ -1,4 +1,4 @@
-# 🎲 guess the number 🎰
+# 🎰 guess the number 🎰
 Welcome to the ``guess the number game``, a simple number guessing game implemented in C programming language
 
 ## About
